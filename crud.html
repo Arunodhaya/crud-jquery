@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | Data Tables</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="../../tasks/Login/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../tasks/Login/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../tasks/Login/bower_components/Ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../tasks/Login/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../tasks/Login/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../tasks/Login/dist/css/skins/_all-skins.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        <style>
+          .example-modal .modal {
+            position: relative;
+            top: auto;
+            bottom: auto;
+            right: auto;
+            left: auto;
+            display: block;
+            z-index: 1;
+          }
+      
+          .example-modal .modal {
+            background: transparent !important;
+          }
+        </style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="../../index2.html" class="logo">
+      
+      <span class="logo-mini"><b>A</b>LT</span>
+      
+      <span class="logo-lg"><b>Admin</b>LTE</span>
+    </a>
+  
+    <nav class="navbar navbar-static-top">
+      
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MAIN NAVIGATION</li>
+        <li class="treeview active">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>Tables</span>
+            <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+          </a>
+          <ul class="treeview-menu">
+            <!-- <li><a href="simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li> -->
+            <li class="active"><a href="data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+          </ul>
+        </li>
+     
+    </section>
+     
+  </aside> 
+
+   <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+   <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Data Tables
+        <small>advanced tables</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Tables</a></li>
+        <li class="active">Data tables</li>
+      </ol>
+    </section>
+
+
+           <div class="box" id="emp">
+            <div class="box-header">
+              <h3 class="box-title">Data Table With Full Features</h3>
+            </div>
+            <button type="button" class="btn btn-primary" id="view">View</button>
+            <div class="box-body">
+                
+              <table id="example1" class="table table-bordered table-striped">
+                <tbody id="users">
+                </tbody>
+              </table>
+            </div>
+          </div>
+      <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Really do you want to update?</h4>
+            </div>
+            <div class="modal-body">
+              <p>One fine body&hellip;</p>
+              <form class="form-horizontal">
+                <div class="box-body">
+                     <div class="form-group">
+                    <label for="usr1" class="col-sm-2 control-label">Name</label>
+  
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="name" placeholder="name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="usr2" class="col-sm-2 control-label">Job</label>
+  
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="job" placeholder="job">
+                    </div>
+                  </div>
+                </div>
+              </form>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+              <button type="button" id='update' class="btn btn-primary">update</button>
+            </div>
+          </div>
+        </div>
+  </div>
+  <div class="modal modal-success fade" id="modal-success">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Create</h4>
+          </div>
+          <div class="modal-body">
+            <p>Create a user</p>
+            <form class="form-horizontal">
+                <div class="box-body">
+                     <div class="form-group">
+                    <label for="usr1" class="col-sm-2 control-label">Name</label>
+  
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="uname" placeholder="name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="usr2" class="col-sm-2 control-label">Job</label>
+  
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="ujob" placeholder="job">
+                    </div>
+                  </div>
+                </div>
+              </form>
+  </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+            <button type="button" id='create' class="btn btn-outline">Create</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.4.0
+    </div>
+    <strong>Copyright &copy; 2019</strong> All rights
+    reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  
+<!-- jQuery 3 -->
+<script src="../../tasks/Login/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../../tasks/Login/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../../tasks/Login/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../tasks/Login/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../tasks/Login/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../tasks/Login/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../tasks/Login/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../tasks/Login/dist/js/demo.js"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+</script>
+<script>
+
+
+  $('#view').click(function() {
+      
+    
+ $.ajax({  
+      url : 'https://reqres.in/api/users?page=2',
+      type : 'GET',
+      dataType : 'JSON',
+      contentType: "application/json",
+      success : function(response) {
+        var res = JSON.parse(JSON.stringify(response))
+        // var res=JSON.stringify(response)
+        $('#users').append(
+                         
+                         '<tr><th>' + 'id'
+                                 + '</th><th>'
+                                 + 'FirstNmae'
+                                 + '</th><th>'
+                                 + 'LastName'
+                                 + '</th><th>'
+                                 + 'Avatar'
+                                 +'</th></tr>'
+                                 )
+   
+        
+            $.each(res.data, function() {
+                     $('#users').append(
+                          '<tr class="item"><td>' +this.id
+                                  + '</td><td>'
+                                  + this.first_name
+                                  + '</td><td>'
+                                  + this.last_name
+                                  + '</td><td>'
+                                  //+this.avatar
+                                  +'<img src="' + this.avatar + '" />'
+                                  + '</td>'
+                                  +" <td><button id='updatei' type='button' class='btn btn-default' data-toggle='modal' data-target='#modal-default'>update</button></td>" 
+                                  +" <td><button type='button'  class='btn btn-success' data-toggle='modal' data-target='#modal-success'>Create</button></td>" 
+       
+                                  +'</td><td>'
+                                  +"<button id='delete' type='button' item-id='"+this.id+"' class='btn btn-primary'>Delete</button></td>"
+                                  +'</td></tr>')                  
+              });  
+              
+    $('#create').click(function() {
+      
+      var Name = $("#uname").val();
+      var Job = $("#ujob").val();
+          $.ajax({
+      type: 'POST',
+      dataType: 'json',
+      contentType: "application/json",
+      url: 'https://reqres.in/api/users',
+      data:  JSON.stringify ({
+           name: Name,
+           job: Job,
+          }),
+       success: function(data) { 
+          var idd = data.id;
+          alert(idd+"Created Sucessfully"); 
+       },      
+  });
+  });   
+  $('#update').click(function() {
+        //  var idd = $("#Uid").val();
+         var Name = $("#name").val();
+         var Job = $("#job").val();
+      $.ajax({  
+      url : 'https://reqres.in/api/users/'+this.id,
+      type : 'PUT',
+      dataType : 'JSON',
+      contentType: "application/json",
+      data:  JSON.stringify ({
+         name: Name,
+         job: Job,
+         }),
+      success : function(data) {
+                alert("saved");
+                  }
+      });
+  });
+     $('table').on('click','#delete', function(){
+ $.ajax({  
+      url : 'https://reqres.in/api/users/'+$(this).attr('item-id'),
+      type : 'DELETE',
+      dataType : 'JSON',
+      contentType: "application/json",
+      
+      success : function(data) {
+                     alert("deleted Sucessfully");
+                  }
+      });
+  });
+ }
+     });
+ });
+ </script>
+</body>
+</html>
