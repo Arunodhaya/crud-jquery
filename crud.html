@@ -143,6 +143,14 @@
               <p>One fine body&hellip;</p>
               <form class="form-horizontal">
                 <div class="box-body">
+                  <div class="form-group">
+                        <label for="usr1" class="col-sm-2 control-label">Id</label>
+      
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="uid" placeholder="id">
+                        </div>
+                      </div>
+                    
                      <div class="form-group">
                     <label for="usr1" class="col-sm-2 control-label">Name</label>
   
@@ -311,11 +319,11 @@
   });
   });   
   $('#update').click(function() {
-        //  var idd = $("#Uid").val();
+         var idd = $("#uid").val();
          var Name = $("#name").val();
          var Job = $("#job").val();
       $.ajax({  
-      url : 'https://reqres.in/api/users/'+this.id,
+      url : 'https://reqres.in/api/users/'+idd,
       type : 'PUT',
       dataType : 'JSON',
       contentType: "application/json",
